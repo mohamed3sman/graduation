@@ -13,7 +13,11 @@ import 'package:tawseel/ui/widgets/default_scaffold.dart';
 
 import 'ui/pages/change_password.dart';
 import 'ui/pages/create_new_password.dart';
+import 'ui/pages/home1.dart';
 import 'ui/pages/login_page.dart';
+import 'ui/pages/orders.dart';
+import 'ui/pages/orders1.dart';
+import 'ui/pages/profile_1.dart';
 import 'ui/pages/signup_page.dart';
 //import 'ui/pages/order_details.dart';
 

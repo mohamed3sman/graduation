@@ -23,7 +23,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   int _currentPage = 0;
   late Timer timer;
 
-  final PageController _pageController = PageController(
+  final PageController pageController = PageController(
     initialPage: 0,
   );
   @override
@@ -35,7 +35,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         _currentPage = 0;
       }
 
-      _pageController.animateToPage(
+      pageController.animateToPage(
         _currentPage,
         duration: const Duration(milliseconds: 500),
         curve: Curves.easeInOutQuart,
@@ -67,7 +67,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                   children: [
                     SizedBox(
                       height: Get.width / 2,
-                      child: PageView(controller: _pageController, children: [
+                      child: PageView(controller: pageController, children: [
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           mainAxisSize: MainAxisSize.min,
