@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/ui/company/pages/login_page.dart';
 import 'package:tawseel/ui/company/widgets/default_back_button.dart';
@@ -102,7 +101,12 @@ class SignupPage extends StatelessWidget {
                   style: TText.displaySmall,
                 ),
                 TextButton(
-                  onPressed: () => Get.off(() => const LoginPage()),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const LoginPage();
+                    }));
+                  },
                   child: const Text(
                     "تسجيل دخول",
                   ),

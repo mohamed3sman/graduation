@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:tawseel/controllers/settings_controller.dart';
 import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/core/themes.dart';
-import 'package:tawseel/ui/company/pages/selection.dart';
+import 'package:tawseel/ui/company/pages/onboarding_page.dart';
 
 //import 'ui/pages/order_details.dart';
 
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       darkTheme: AppThemes.inst.getAppTheme(TColors.mainDark, light: false),
       themeMode: Settings.inst.themeMode.value,
       // home: const OrderDetails(),
-      home: const SelectionScreen(),
+      home: const OnBoardingPage(),
     );
   }
 }

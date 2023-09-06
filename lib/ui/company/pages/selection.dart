@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:tawseel/core/constants.dart';
+import 'package:tawseel/ui/company/pages/signup_page.dart';
 
 class SelectionScreen extends StatefulWidget {
   const SelectionScreen({super.key});
@@ -54,7 +55,12 @@ class _SelectionScreenState extends State<SelectionScreen> {
                     color: primaryColor,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const SignupPage();
+                      }));
+                    },
                     child: const Text(
                       'سائق',
                       style: TextStyle(
@@ -72,7 +78,12 @@ class _SelectionScreenState extends State<SelectionScreen> {
                     color: primaryColor,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const SignupPage();
+                      }));
+                    },
                     child: const Text(
                       'شركة',
                       style: TextStyle(

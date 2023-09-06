@@ -23,17 +23,18 @@ class TawseelFilledButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: color,
-      borderRadius: BorderRadius.circular(kBorderRadius6),
+      borderRadius: BorderRadius.circular(kBorderRadius6 * 2),
       child: InkWell(
-        borderRadius: BorderRadius.circular(kBorderRadius6),
         onTap: onTap,
         child: Container(
+          padding: const EdgeInsets.symmetric(vertical: 3),
           width: width ?? double.infinity,
           alignment: Alignment.center,
           margin: margin ?? const EdgeInsets.all(12.0),
           child: Text(
             text,
-            style: TText.displayMedium.copyWith(color: textColor ?? TColors.whiteText),
+            style: TText.displayMedium
+                .copyWith(color: textColor ?? TColors.whiteText),
           ),
         ),
       ),
