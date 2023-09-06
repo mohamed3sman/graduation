@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tawseel/core/constants.dart';
-import 'package:tawseel/ui/widgets/default_back_button.dart';
-import 'package:tawseel/ui/widgets/default_container.dart';
-import 'package:tawseel/ui/widgets/default_scaffold.dart';
-import 'package:tawseel/ui/widgets/filled_button.dart';
+import 'package:tawseel/ui/company/widgets/default_back_button.dart';
+import 'package:tawseel/ui/company/widgets/default_container.dart';
+import 'package:tawseel/ui/company/widgets/default_scaffold.dart';
+import 'package:tawseel/ui/company/widgets/filled_button.dart';
 
 import '../widgets/textfield.dart';
 

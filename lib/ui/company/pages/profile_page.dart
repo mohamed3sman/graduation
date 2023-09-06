@@ -3,12 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tawseel/core/constants.dart';
-import 'package:tawseel/ui/pages/change_password.dart';
-import 'package:tawseel/ui/widgets/default_container.dart';
-import 'package:tawseel/ui/widgets/default_scaffold.dart';
-import 'package:tawseel/ui/widgets/filled_button.dart';
-import 'package:tawseel/ui/widgets/notification_icon.dart';
-import 'package:tawseel/ui/widgets/textfield.dart';
+import 'package:tawseel/ui/company/pages/Change_password.dart';
+import 'package:tawseel/ui/company/widgets/default_container.dart';
+import 'package:tawseel/ui/company/widgets/default_scaffold.dart';
+import 'package:tawseel/ui/company/widgets/filled_button.dart';
+import 'package:tawseel/ui/company/widgets/notification_icon.dart';
+import 'package:tawseel/ui/company/widgets/textfield.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -27,7 +27,8 @@ class ProfilePage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: kPadding20),
                 decoration: BoxDecoration(
                   color: TColors.card.withAlpha(222),
-                  borderRadius: const BorderRadius.vertical(top: Radius.circular(kBorderRadius20)),
+                  borderRadius: const BorderRadius.vertical(
+                      top: Radius.circular(kBorderRadius20)),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

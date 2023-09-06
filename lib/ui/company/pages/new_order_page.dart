@@ -3,15 +3,13 @@ import 'package:get/get.dart';
 import 'package:tawseel/controllers/current_orders.dart';
 
 import 'package:tawseel/core/constants.dart';
-import 'package:tawseel/ui/bottomsheets/added_product.dart';
-import 'package:tawseel/ui/bottomsheets/choose_location.dart';
-import 'package:tawseel/ui/bottomsheets/verification_code.dart';
-import 'package:tawseel/ui/widgets/checkbox_list_tile.dart';
-import 'package:tawseel/ui/widgets/default_back_button.dart';
-import 'package:tawseel/ui/widgets/default_scaffold.dart';
-import 'package:tawseel/ui/widgets/filled_button.dart';
-import 'package:tawseel/ui/widgets/notification_icon.dart';
-import 'package:tawseel/ui/widgets/textfield.dart';
+import 'package:tawseel/ui/company/bottomsheets/added_product.dart';
+import 'package:tawseel/ui/company/bottomsheets/choose_location.dart';
+import 'package:tawseel/ui/company/widgets/default_back_button.dart';
+import 'package:tawseel/ui/company/widgets/default_scaffold.dart';
+import 'package:tawseel/ui/company/widgets/filled_button.dart';
+import 'package:tawseel/ui/company/widgets/notification_icon.dart';
+import 'package:tawseel/ui/company/widgets/textfield.dart';
 
 class NewOrderPage extends StatelessWidget {
   const NewOrderPage({super.key});
@@ -26,7 +24,7 @@ class NewOrderPage extends StatelessWidget {
       ),
       actions: [
         IconButton(
-          onPressed: () => null,
+          onPressed: () {},
           icon: const TawseelNotificationIcon(),
         ),
       ],
@@ -65,8 +63,10 @@ class NewOrderPage extends StatelessWidget {
                           ],
                         ),
                         onPressed: () {
-                          CurrentOrders.inst.newOrderNameController.value.clear();
-                          CurrentOrders.inst.newOrderPriceController.value.clear();
+                          CurrentOrders.inst.newOrderNameController.value
+                              .clear();
+                          CurrentOrders.inst.newOrderPriceController.value
+                              .clear();
                           CurrentOrders.inst.showNewOrderContainer.value = true;
                         },
                       ),
@@ -117,7 +117,8 @@ class NewOrderPage extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  onPressed: () => CurrentOrders.inst.newOrders.remove(e.key),
+                                  onPressed: () => CurrentOrders.inst.newOrders
+                                      .remove(e.key),
                                 ),
                                 TextButton(
                                   child: Row(
@@ -138,9 +139,12 @@ class NewOrderPage extends StatelessWidget {
                                     ],
                                   ),
                                   onPressed: () {
-                                    CurrentOrders.inst.showNewOrderContainer.value = true;
-                                    CurrentOrders.inst.newOrderNameController.value.text = e.key;
-                                    CurrentOrders.inst.newOrderPriceController.value.text = e.value.toString();
+                                    CurrentOrders.inst.showNewOrderContainer
+                                        .value = true;
+                                    CurrentOrders.inst.newOrderNameController
+                                        .value.text = e.key;
+                                    CurrentOrders.inst.newOrderPriceController
+                                        .value.text = e.value.toString();
                                   },
                                 ),
                               ],
@@ -155,12 +159,14 @@ class NewOrderPage extends StatelessWidget {
                   if (CurrentOrders.inst.showNewOrderContainer.value) ...[
                     TawseelTextField(
                       hintText: 'اسم المنتج',
-                      controller: CurrentOrders.inst.newOrderNameController.value,
+                      controller:
+                          CurrentOrders.inst.newOrderNameController.value,
                     ),
                     TawseelTextField(
                       hintText: 'سعر المنتج',
                       suffixText: 'ج.م',
-                      controller: CurrentOrders.inst.newOrderPriceController.value,
+                      controller:
+                          CurrentOrders.inst.newOrderPriceController.value,
                       inputType: TextInputType.number,
                     ),
                     const SizedBox(
@@ -170,13 +176,26 @@ class NewOrderPage extends StatelessWidget {
                       color: TColors.success,
                       text: 'إضافة',
                       onTap: () {
-                        if (CurrentOrders.inst.newOrderNameController.value.text != '' && CurrentOrders.inst.newOrderPriceController.value.text != '') {
+                        if (CurrentOrders
+                                    .inst.newOrderNameController.value.text !=
+                                '' &&
+                            CurrentOrders
+                                    .inst.newOrderPriceController.value.text !=
+                                '') {
                           CurrentOrders.inst.newOrders.addAll(
-                            {CurrentOrders.inst.newOrderNameController.value.text: int.parse(CurrentOrders.inst.newOrderPriceController.value.text)},
+                            {
+                              CurrentOrders
+                                      .inst.newOrderNameController.value.text:
+                                  int.parse(CurrentOrders
+                                      .inst.newOrderPriceController.value.text)
+                            },
                           );
-                          CurrentOrders.inst.newOrderNameController.value.clear();
-                          CurrentOrders.inst.newOrderPriceController.value.clear();
-                          CurrentOrders.inst.showNewOrderContainer.value = false;
+                          CurrentOrders.inst.newOrderNameController.value
+                              .clear();
+                          CurrentOrders.inst.newOrderPriceController.value
+                              .clear();
+                          CurrentOrders.inst.showNewOrderContainer.value =
+                              false;
                         }
                       },
                     ),

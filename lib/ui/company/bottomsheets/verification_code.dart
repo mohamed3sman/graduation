@@ -3,9 +3,8 @@ import 'package:get/get.dart';
 import 'package:pinput/pinput.dart';
 
 import 'package:tawseel/core/constants.dart';
-import 'package:tawseel/ui/pages/create_new_password.dart';
-import 'package:tawseel/ui/widgets/default_scaffold.dart';
-import 'package:tawseel/ui/widgets/filled_button.dart';
+import 'package:tawseel/ui/company/pages/create_new_password.dart';
+import 'package:tawseel/ui/company/widgets/filled_button.dart';
 
 void showVerificationCodeBottomSheet() {
   final defaultPinTheme = PinTheme(
@@ -63,7 +62,8 @@ void showVerificationCodeBottomSheet() {
               child: Pinput(
                 // controller: pinController,
                 // focusNode: focusNode,
-                androidSmsAutofillMethod: AndroidSmsAutofillMethod.smsUserConsentApi,
+                androidSmsAutofillMethod:
+                    AndroidSmsAutofillMethod.smsUserConsentApi,
                 listenForMultipleSmsOnAndroid: true,
                 defaultPinTheme: defaultPinTheme,
                 validator: (value) {
@@ -116,7 +116,8 @@ void showVerificationCodeBottomSheet() {
               children: [
                 Text(
                   "إعادة إرسال الكود",
-                  style: TText.displaySmall.copyWith(fontSize: 14.0, decoration: TextDecoration.underline),
+                  style: TText.displaySmall.copyWith(
+                      fontSize: 14.0, decoration: TextDecoration.underline),
                 ),
                 const SizedBox(
                   width: kPadding4,
@@ -134,7 +135,7 @@ void showVerificationCodeBottomSheet() {
               padding: const EdgeInsets.all(kPadding8),
               child: TawseelFilledButton(
                 text: 'إرسال الرمز',
-                onTap: () => null,
+                onTap: () {},
               ),
             ),
             const SizedBox(

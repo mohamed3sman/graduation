@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:tawseel/core/constants.dart';
-import 'package:tawseel/ui/widgets/checkbox_list_tile.dart';
-import 'package:tawseel/ui/widgets/filled_button.dart';
-import 'package:tawseel/ui/widgets/textfield.dart';
+import 'package:tawseel/ui/company/widgets/checkbox_list_tile.dart';
+import 'package:tawseel/ui/company/widgets/filled_button.dart';
+import 'package:tawseel/ui/company/widgets/textfield.dart';
 
 void showChooseLocationBottomSheet() {
   Get.bottomSheet(
@@ -73,7 +73,7 @@ void showChooseLocationBottomSheet() {
             hintText: 'تكلفة التوصيل',
           ),
           const SizedBox(height: kPadding12),
-          TawseelFilledButton(
+          const TawseelFilledButton(
             text: 'إرسال',
           ),
           const SizedBox(height: kPadding24),

@@ -3,11 +3,10 @@ import 'package:get/get.dart';
 import 'package:tawseel/class/order.dart';
 
 import 'package:tawseel/core/constants.dart';
-import 'package:tawseel/core/enums.dart';
 import 'package:tawseel/core/extensions.dart';
-import 'package:tawseel/ui/pages/order_details.dart';
-import 'package:tawseel/ui/widgets/default_container.dart';
-import 'package:tawseel/ui/widgets/filled_button.dart';
+import 'package:tawseel/ui/company/pages/order_details.dart';
+import 'package:tawseel/ui/company/widgets/default_container.dart';
+import 'package:tawseel/ui/company/widgets/filled_button.dart';
 
 class TawseelOrderBox extends StatelessWidget {
   final Order order;
@@ -83,7 +82,8 @@ class TawseelOrderBox extends StatelessWidget {
             color: TColors.bg,
             text: 'عرض التفاصيل',
             textColor: TColors.blackText,
-            margin: const EdgeInsets.symmetric(horizontal: kMargin12, vertical: kMargin20),
+            margin: const EdgeInsets.symmetric(
+                horizontal: kMargin12, vertical: kMargin20),
           )
         ],
       ),

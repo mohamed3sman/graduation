@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tawseel/core/constants.dart';
-import 'package:tawseel/ui/pages/current_orders.dart';
-import 'package:tawseel/ui/pages/home_page.dart';
-import 'package:tawseel/ui/pages/new_order_page.dart';
-import 'package:tawseel/ui/pages/profile_page.dart';
-import 'package:tawseel/ui/pages/reset_password_page.dart';
+import 'package:tawseel/ui/company/pages/current_orders.dart';
+import 'package:tawseel/ui/company/pages/new_order_page.dart';
+import 'package:tawseel/ui/company/pages/profile_page.dart';
+import 'package:tawseel/ui/driver/pages/driver_home_page.dart';
 
 /// only wraps content in an appbar and background with colors
 class TawseelScaffold extends StatefulWidget {
@@ -17,7 +16,16 @@ class TawseelScaffold extends StatefulWidget {
   final double? leadingWidth;
   final List<Widget>? actions;
   final Color? backgroundColor;
-  const TawseelScaffold({super.key, this.body, this.leading, this.title, this.actions, this.backgroundColor, this.titleSpacing, this.toolbarHeight, this.leadingWidth});
+  const TawseelScaffold(
+      {super.key,
+      this.body,
+      this.leading,
+      this.title,
+      this.actions,
+      this.backgroundColor,
+      this.titleSpacing,
+      this.toolbarHeight,
+      this.leadingWidth});
 
   @override
   State<TawseelScaffold> createState() => _TawseelScaffoldState();
@@ -66,7 +74,7 @@ class _TawseelScaffoldState extends State<TawseelScaffold> {
               ProfilePage(),
               NewOrderPage(),
               CurrentOrdersPage(),
-              Homepage(),
+              DriverHomePage(),
             ],
           ),
       bottomNavigationBar: widget.body != null
@@ -74,7 +82,9 @@ class _TawseelScaffoldState extends State<TawseelScaffold> {
           : BottomNavigationBar(
               type: BottomNavigationBarType.fixed,
               onTap: (value) {
-                _pageController.animateToPage(value, duration: const Duration(milliseconds: 400), curve: Curves.easeInOutQuart);
+                _pageController.animateToPage(value,
+                    duration: const Duration(milliseconds: 400),
+                    curve: Curves.easeInOutQuart);
                 _selectedIndex = value;
               },
               showSelectedLabels: false,
@@ -84,19 +94,19 @@ class _TawseelScaffoldState extends State<TawseelScaffold> {
               unselectedItemColor: context.theme.iconTheme.color,
               items: const <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.new_label),
+                  icon: Icon(Icons.person, size: 30),
                   label: '',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.add_circle),
+                  icon: Icon(Icons.add_circle, size: 30),
                   label: '',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.calendar_month),
+                  icon: Icon(Icons.calendar_month, size: 30),
                   label: '',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
+                  icon: Icon(Icons.home, size: 30),
                   label: '',
                 ),
               ],
@@ -114,7 +124,8 @@ class KeepAliveWrapper extends StatefulWidget {
   _KeepAliveWrapperState createState() => _KeepAliveWrapperState();
 }
 
-class _KeepAliveWrapperState extends State<KeepAliveWrapper> with AutomaticKeepAliveClientMixin {
+class _KeepAliveWrapperState extends State<KeepAliveWrapper>
+    with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
     super.build(context);

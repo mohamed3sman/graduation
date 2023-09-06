@@ -1,14 +1,13 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tawseel/core/constants.dart';
-import 'package:tawseel/ui/pages/onboarding_page.dart';
-import 'package:tawseel/ui/pages/reset_password_page.dart';
-import 'package:tawseel/ui/widgets/default_container.dart';
-import 'package:tawseel/ui/widgets/default_scaffold.dart';
-import 'package:tawseel/ui/widgets/filled_button.dart';
-import 'package:tawseel/ui/widgets/textfield.dart';
+import 'package:tawseel/ui/company/pages/onboarding_page.dart';
+import 'package:tawseel/ui/company/widgets/default_container.dart';
+import 'package:tawseel/ui/company/widgets/default_scaffold.dart';
+import 'package:tawseel/ui/company/widgets/filled_button.dart';
+import 'package:tawseel/ui/company/widgets/textfield.dart';
+
+import 'reset_password_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);

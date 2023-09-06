@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tawseel/class/order.dart';
 import 'package:tawseel/core/constants.dart';
-import 'package:tawseel/core/enums.dart';
-import 'package:tawseel/ui/widgets/default_back_button.dart';
-import 'package:tawseel/ui/widgets/default_scaffold.dart';
-import 'package:tawseel/ui/widgets/notification_icon.dart';
-import 'package:tawseel/ui/widgets/order_box.dart';
+import 'package:tawseel/ui/company/widgets/default_back_button.dart';
+import 'package:tawseel/ui/company/widgets/default_scaffold.dart';
+import 'package:tawseel/ui/company/widgets/notification_icon.dart';
+import 'package:tawseel/ui/company/widgets/order_box.dart';
 
 class OrderDetails extends StatelessWidget {
   final TawseelOrderBox orderBox;
@@ -111,7 +109,7 @@ class OrderDetails extends StatelessWidget {
                       style: TText.displaySmall,
                     ),
                     Text(
-                      "${total}ج.م",
+                      "$totalج.م",
                       style: TText.displaySmall,
                     ),
                   ],
@@ -210,10 +208,13 @@ class OrderDetails extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(kPadding24),
             child: OutlinedButton(
-              style: ButtonStyle(foregroundColor: MaterialStateProperty.all(Colors.blue), shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(kBorderRadius6)))),
-              child: Row(
+              style: ButtonStyle(
+                  foregroundColor: MaterialStateProperty.all(Colors.blue),
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(kBorderRadius6)))),
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   Icon(Icons.dialer_sip),
                   SizedBox(
                     width: kPadding8,
@@ -221,7 +222,7 @@ class OrderDetails extends StatelessWidget {
                   Text("اتصال بالعميل"),
                 ],
               ),
-              onPressed: () => null,
+              onPressed: () {},
             ),
           )
         ],

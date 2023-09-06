@@ -1,14 +1,12 @@
 import 'dart:async';
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tawseel/core/constants.dart';
-import 'package:tawseel/ui/pages/login_page.dart';
-import 'package:tawseel/ui/pages/signup_page.dart';
-import 'package:tawseel/ui/widgets/default_container.dart';
-
+import 'package:tawseel/ui/company/pages/login_page.dart';
+import 'package:tawseel/ui/company/widgets/default_container.dart';
 import '../widgets/filled_button.dart';
+import 'signup_page.dart';
 
 class OnBoardingPage extends StatefulWidget {
   final Widget? child;
@@ -86,14 +84,16 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                             ),
                             Text(
                               "تسليم الأرباح",
-                              style: TText.titleMedium.copyWith(color: TColors.whiteText),
+                              style: TText.titleMedium
+                                  .copyWith(color: TColors.whiteText),
                             ),
                             const SizedBox(
                               height: kPadding20,
                             ),
                             Text(
                               "هتاخد تكاليف الطلب و انت فى مكانك و سيب الباقى علينا",
-                              style: TText.bodySmall.copyWith(color: TColors.whiteText),
+                              style: TText.bodySmall
+                                  .copyWith(color: TColors.whiteText),
                             ),
                           ],
                         ),
@@ -115,14 +115,16 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                             ),
                             Text(
                               "التوصيل و التسليم",
-                              style: TText.titleMedium.copyWith(color: TColors.whiteText),
+                              style: TText.titleMedium
+                                  .copyWith(color: TColors.whiteText),
                             ),
                             const SizedBox(
                               height: kPadding20,
                             ),
                             Text(
                               "بعد استلام ارباحك هيقوم أحد السائقين بتوصيل طلبك للعميل",
-                              style: TText.bodySmall.copyWith(color: TColors.whiteText),
+                              style: TText.bodySmall
+                                  .copyWith(color: TColors.whiteText),
                             ),
                           ],
                         ),
@@ -144,14 +146,16 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                             ),
                             Text(
                               "استلام الطلب",
-                              style: TText.titleMedium.copyWith(color: TColors.whiteText),
+                              style: TText.titleMedium
+                                  .copyWith(color: TColors.whiteText),
                             ),
                             const SizedBox(
                               height: kPadding20,
                             ),
                             Text(
                               "هيتم استلام طلبك من خلال أحد السائقين اللى هتختارهم",
-                              style: TText.bodySmall.copyWith(color: TColors.whiteText),
+                              style: TText.bodySmall
+                                  .copyWith(color: TColors.whiteText),
                             ),
                           ],
                         ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:tawseel/core/constants.dart';
-import 'package:tawseel/ui/widgets/filled_button.dart';
+import 'package:tawseel/ui/company/widgets/filled_button.dart';
 
 void showAddedProductSuccessfullyBottomSheet() {
   Get.bottomSheet(
@@ -33,7 +33,8 @@ void showAddedProductSuccessfullyBottomSheet() {
               shape: BoxShape.circle,
               color: TColors.success,
             ),
-            child: Icon(Icons.check_rounded, size: Get.width / 7, color: TColors.whiteText),
+            child: Icon(Icons.check_rounded,
+                size: Get.width / 7, color: TColors.whiteText),
           ),
           const SizedBox(
             height: kPadding12,

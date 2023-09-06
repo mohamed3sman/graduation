@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tawseel/class/order.dart';
-
 import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/core/enums.dart';
-import 'package:tawseel/ui/widgets/default_container.dart';
-import 'package:tawseel/ui/widgets/default_scaffold.dart';
-import 'package:tawseel/ui/widgets/filled_button.dart';
-import 'package:tawseel/ui/widgets/notification_icon.dart';
-import 'package:tawseel/ui/widgets/order_box.dart';
+import 'package:tawseel/ui/company/widgets/default_container.dart';
+import 'package:tawseel/ui/company/widgets/default_scaffold.dart';
+import 'package:tawseel/ui/company/widgets/filled_button.dart';
+import 'package:tawseel/ui/company/widgets/notification_icon.dart';
+import 'package:tawseel/ui/company/widgets/order_box.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -17,7 +16,8 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return TawseelScaffold(
       toolbarHeight: Get.height / 10,
-      leading: TawseelContainer(isCircle: true, child: Image.asset('assets/images/logo.png')),
+      leading: TawseelContainer(
+          isCircle: true, child: Image.asset('assets/images/logo.png')),
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -38,7 +38,7 @@ class Homepage extends StatelessWidget {
           )
         ],
       ),
-      actions: [TawseelNotificationIcon()],
+      actions: const [TawseelNotificationIcon()],
       body: ListView(
         children: [
           const SizedBox(height: kPadding16),
@@ -61,7 +61,7 @@ class Homepage extends StatelessWidget {
                       const SizedBox(height: kPadding16),
                       TawseelFilledButton(
                         text: 'اطلب دلوقتي',
-                        onTap: () => null,
+                        onTap: () {},
                       ),
                     ],
                   ),
@@ -77,7 +77,8 @@ class Homepage extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               color: TColors.card.withAlpha(222),
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(kBorderRadius20)),
+              borderRadius: const BorderRadius.vertical(
+                  top: Radius.circular(kBorderRadius20)),
             ),
             padding: EdgeInsets.only(bottom: Get.height / 4),
             child: Column(
@@ -88,11 +89,13 @@ class Homepage extends StatelessWidget {
                   padding: const EdgeInsets.only(right: kPadding20),
                   child: Text(
                     'الطلبات الحالية',
-                    style: TText.displayLarge.copyWith(color: TColors.blackText),
+                    style:
+                        TText.displayLarge.copyWith(color: TColors.blackText),
                   ),
                 ),
                 TawseelOrderBox(
-                  order: Order(OrderState.onTheWay, 25613, 'شارع 44 - السبتية - القاهرة', DateTime.now(), 40),
+                  order: Order(OrderState.onTheWay, 25613,
+                      'شارع 44 - السبتية - القاهرة', DateTime.now(), 40),
                 ),
               ],
             ),
