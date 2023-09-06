@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+const Color primaryColor = Color.fromARGB(255, 255, 119, 28);
+
 /// Paddings
 const double kPadding4 = 4.0;
 const double kPadding8 = 8.0;
@@ -26,7 +28,6 @@ const double kMargin12 = 12.0;
 const double kMargin16 = 16.0;
 const double kMargin20 = 20.0;
 const double kMargin24 = 24.0;
-
 
 /// Colors
 class TColors {
