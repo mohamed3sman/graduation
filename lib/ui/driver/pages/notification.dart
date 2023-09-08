@@ -9,7 +9,7 @@ class NotificationsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const TawseelScaffold(
+    return TawseelScaffold(
       title: Text("الاشعارات"),
       leading: TawseelBackButton(),
       body: SingleChildScrollView(

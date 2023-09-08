@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/ui/company/widgets/default_container.dart';
 import 'package:tawseel/ui/company/widgets/default_scaffold.dart';
 import 'package:tawseel/ui/company/widgets/filled_button.dart';
@@ -11,91 +12,108 @@ class Reason extends StatefulWidget {
   State<Reason> createState() => _ReasonState();
 }
 
+List<String> reasons = [
+  "العميل رفض الطلب",
+  "الطلب تالف",
+  "سبب اخر",
+];
+
+
 class _ReasonState extends State<Reason> {
+  String currentOption = reasons[0];
+
   @override
   Widget build(BuildContext context) {
-    String? Reasons;
+
+
 
     return TawseelScaffold(
-      body: Column(
-        children: [
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("سبب الإلغاء"),
-            ],
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          TawseelContainer(
-            child: RadioListTile(
-              title: const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [Text("العميل رفض الطلب")],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Text(
+                  "سبب الإلغاء",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 35,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            TawseelContainer(
+              child: ListTile(
+                title: const Text("العميل رفض الطلب"),
+                leading: Radio(
+                  value: reasons[0],
+                  groupValue: currentOption,
+                  onChanged: (value) {
+                    setState(() {
+                      currentOption = value.toString();
+                    });
+                  },
+                ),
               ),
-              value: "adress 2",
-              groupValue: Reasons,
-              onChanged: (value) {
-                setState(() {
-                  Reasons = value.toString();
-                });
-              },
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          TawseelContainer(
-            child: RadioListTile(
-              title: const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [Text("الطلب تالف")],
+            const SizedBox(
+              height: 20,
+            ),
+            TawseelContainer(
+              child: ListTile(
+                title: const Text("الطلب تالف"),
+                leading: Radio(
+                  value: reasons[1],
+                  groupValue: currentOption,
+                  onChanged: (value) {
+                    setState(() {
+                      currentOption = value.toString();
+                    });
+                  },
+                ),
               ),
-              value: "adress 2",
-              groupValue: Reasons,
-              onChanged: (value) {
-                setState(() {
-                  Reasons = value.toString();
-                });
-              },
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          RadioListTile(
-            title: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [Text("سبب اخر")],
+            const SizedBox(
+              height: 20,
             ),
-            value: "adress 2",
-            groupValue: Reasons,
-            onChanged: (value) {
-              setState(() {
-                Reasons = value.toString();
-              });
-            },
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: TawseelTextField(
-              hintText: "اترك السبب هنا ",
+            TawseelContainer(
+              child: ListTile(
+                title: const Text("سبب اخر"),
+                leading: Radio(
+                  value: reasons[2],
+                  groupValue: currentOption,
+                  onChanged: (value) {
+                    setState(() {
+                      currentOption = value.toString();
+                    });
+                  },
+                ),
+              ),
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: TawseelFilledButton(
-              text: "ارسال",
+            const SizedBox(
+              height: 20,
             ),
-          )
-        ],
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: TawseelTextField(
+                hintText: "اترك السبب هنا ",
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: TawseelFilledButton(
+                text: "ارسال",
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

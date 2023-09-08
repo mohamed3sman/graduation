@@ -167,7 +167,7 @@ class _DriverHomePageState extends State<DriverHomePage> {
                   const SizedBox(
                     height: kPadding8,
                   ),
-                  const Row(
+                  Row(
                     children: [
                       Icon(
                         Icons.location_on,

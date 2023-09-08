@@ -76,7 +76,7 @@ class CurrentOrderBox extends StatelessWidget {
           const SizedBox(
             height: kPadding8,
           ),
-          const Row(
+          Row(
             children: [
               Icon(
                 Icons.location_on,
