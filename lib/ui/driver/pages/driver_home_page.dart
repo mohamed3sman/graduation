@@ -6,8 +6,18 @@ import 'package:tawseel/ui/company/widgets/default_scaffold.dart';
 import 'package:tawseel/ui/company/widgets/filled_button.dart';
 import 'package:tawseel/ui/company/widgets/notification_icon.dart';
 
-class DriverHomePage extends StatelessWidget {
+import 'reason.dart';
+
+class DriverHomePage extends StatefulWidget {
   const DriverHomePage({Key? key}) : super(key: key);
+
+  @override
+  State<DriverHomePage> createState() => _DriverHomePageState();
+}
+
+class _DriverHomePageState extends State<DriverHomePage> {
+  String status = "متصل الأن";
+  bool value = true;
 
   @override
   Widget build(BuildContext context) {
@@ -50,13 +60,19 @@ class DriverHomePage extends StatelessWidget {
                   style: TText.titleLarge.copyWith(color: TColors.blackText),
                 ),
                 subtitle: Text(
-                  "متصل الأن",
+                  status,
                   style: TText.titleMedium.copyWith(color: TColors.main),
                 ),
                 trailing: Switch(
                   activeColor: TColors.main,
-                  value: true,
-                  onChanged: (bool val) {},
+                  value: value,
+                  onChanged: (bool val) {
+                    setState(() {
+                      value = !value;
+
+                      value == false ? status = 'غير متصل' : status;
+                    });
+                  },
                 ),
               ),
             ),
@@ -181,6 +197,12 @@ class DriverHomePage extends StatelessWidget {
                         width: Get.width / 3,
                       ),
                       TawseelFilledButton(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const Reason();
+                          }));
+                        },
                         color: TColors.handle,
                         textColor: TColors.blackText,
                         text: "الغاء الطلب",

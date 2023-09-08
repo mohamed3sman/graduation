@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/ui/company/pages/login_page.dart';
 import 'package:tawseel/ui/company/widgets/default_back_button.dart';
 import 'package:tawseel/ui/company/widgets/default_scaffold.dart';
 import 'package:tawseel/ui/company/widgets/filled_button.dart';
 import 'package:tawseel/ui/company/widgets/textfield.dart';
+
+import 'home_page.dart';
 
 class SignupPage extends StatelessWidget {
   const SignupPage({Key? key}) : super(key: key);
@@ -87,10 +90,26 @@ class SignupPage extends StatelessWidget {
                     ),
                   ],
                 )),
-            const Padding(
-              padding: EdgeInsets.all(kPadding8),
-              child: TawseelFilledButton(
-                text: "تسجيل جديد",
+            Padding(
+              padding: const EdgeInsets.all(kPadding8),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: TawseelFilledButton(
+                      text: "دخول كسائق",
+                      onTap: () => Get.to(() => const TawseelScaffold()),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 30,
+                  ),
+                  Expanded(
+                    child: TawseelFilledButton(
+                      text: "دخول كشركة",
+                      onTap: () => Get.to(() => const Homepage()),
+                    ),
+                  ),
+                ],
               ),
             ),
             Row(
@@ -109,6 +128,10 @@ class SignupPage extends StatelessWidget {
                   },
                   child: const Text(
                     "تسجيل دخول",
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: primaryColor,
+                        fontWeight: FontWeight.w600),
                   ),
                 ),
               ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/ui/company/widgets/default_container.dart';
+import 'package:tawseel/ui/driver/pages/notification.dart';
 
 class TawseelNotificationIcon extends StatelessWidget {
   const TawseelNotificationIcon({super.key});
@@ -13,7 +14,11 @@ class TawseelNotificationIcon extends StatelessWidget {
           const Icon(Icons.notifications),
           Material(
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const NotificationsPage();
+                }));
+              },
               child: Container(
                 width: 10.0,
                 height: 10.0,
