@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quickalert/quickalert.dart';
+import 'package:tawseel/class/order.dart';
 import 'package:tawseel/core/constants.dart';
+import 'package:tawseel/core/enums.dart';
+import 'package:tawseel/ui/company/pages/order_details.dart';
 import 'package:tawseel/ui/company/widgets/default_container.dart';
 import 'package:tawseel/ui/company/widgets/filled_button.dart';
+import 'package:tawseel/ui/company/widgets/order_box.dart';
+import 'package:tawseel/ui/driver/pages/reason.dart';
 
 class CurrentOrderBox extends StatelessWidget {
   const CurrentOrderBox({super.key});
@@ -58,25 +64,40 @@ class CurrentOrderBox extends StatelessWidget {
               ],
             ),
           ),
+          const SizedBox(
+            height: kPadding8,
+          ),
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(kBorderRadius8),
               border: Border.all(color: TColors.main),
             ),
-            child: const TawseelFilledButton(
-              text: "عرض التفاصيل",
+            child: TawseelFilledButton(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => OrderDetails(
+                              orderBox: TawseelOrderBox(
+                                  order: Order(
+                                      OrderState.onTheWay,
+                                      25613,
+                                      'شارع 44 - السبتية - القاهرة',
+                                      DateTime.now(),
+                                      40)),
+                            )));
+              },
+              text: "عرض تفاصيل الطلب",
               textColor: TColors.main,
               color: TColors.card,
             ),
           ),
-          const SizedBox(
-            height: kPadding8,
-          ),
+
           const Divider(),
           const SizedBox(
             height: kPadding8,
           ),
-          Row(
+          const Row(
             children: [
               Icon(
                 Icons.location_on,
@@ -104,15 +125,29 @@ class CurrentOrderBox extends StatelessWidget {
                 textColor: TColors.card,
                 text: "انهاء الطلب",
                 width: Get.width / 3,
+                onTap: () {
+                  QuickAlert.show(
+                    context: context,
+                    confirmBtnColor: Colors.green,
+                    title: 'تم إرسال الطلب',
+                    confirmBtnText: 'حسنا',
+                    type: QuickAlertType.success,
+                  );
+                },
               ),
               TawseelFilledButton(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const Reason();
+                  }));
+                },
                 color: TColors.handle,
                 textColor: TColors.blackText,
                 text: "الغاء الطلب",
                 width: Get.width / 3,
               ),
             ],
-          )
+          ),
         ],
       ),
     );

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:tawseel/class/order.dart';
 import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/core/enums.dart';
+import 'package:tawseel/ui/company/pages/new_order_page.dart';
 import 'package:tawseel/ui/company/widgets/default_container.dart';
 import 'package:tawseel/ui/company/widgets/default_scaffold.dart';
 import 'package:tawseel/ui/company/widgets/filled_button.dart';
@@ -61,7 +62,7 @@ class Homepage extends StatelessWidget {
                       const SizedBox(height: kPadding16),
                       TawseelFilledButton(
                         text: 'اطلب دلوقتي',
-                        onTap: () {},
+                        onTap: () => Get.to(() => const NewOrderPage()),
                       ),
                     ],
                   ),

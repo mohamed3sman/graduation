@@ -7,9 +7,12 @@ class CurrentOrders extends GetxController {
   static final CurrentOrders inst = CurrentOrders();
 
   RxList<Order> currentAllOrders = [
-    Order(OrderState.onTheWay, 25613, 'شارع 44 - السبتية - القاهرة', DateTime.now(), 40),
-    Order(OrderState.delivered, 25213, 'شارع 44 - السبتية - القاهرة', DateTime.now(), 32),
-    Order(OrderState.canceled, 25213, 'شارع 44 - السبتية - القاهرة', DateTime.now(), 26),
+    Order(OrderState.onTheWay, 25613, 'شارع 44 - السبتية - القاهرة',
+        DateTime.now(), 40),
+    Order(OrderState.delivered, 25213, 'شارع 44 - السبتية - القاهرة',
+        DateTime.now(), 32),
+    Order(OrderState.canceled, 25213, 'شارع 44 - السبتية - القاهرة',
+        DateTime.now(), 26),
   ].obs;
 
   RxList<OrderState> currentFilteredOrders = OrderState.values.obs;
@@ -20,6 +23,8 @@ class CurrentOrders extends GetxController {
     "برجر لحوم - حار": 60,
   }.obs;
   RxBool showNewOrderContainer = true.obs;
-  Rx<TextEditingController> newOrderNameController = TextEditingController().obs;
-  Rx<TextEditingController> newOrderPriceController = TextEditingController().obs;
+  Rx<TextEditingController> newOrderNameController =
+      TextEditingController().obs;
+  Rx<TextEditingController> newOrderPriceController =
+      TextEditingController().obs;
 }

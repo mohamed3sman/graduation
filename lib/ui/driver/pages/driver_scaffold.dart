@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tawseel/core/constants.dart';
-import 'package:tawseel/ui/company/pages/current_orders.dart';
-import 'package:tawseel/ui/company/pages/home_page.dart';
-import 'package:tawseel/ui/company/pages/new_order_page.dart';
-import 'package:tawseel/ui/company/pages/profile_page.dart';
+import 'package:tawseel/ui/driver/pages/driver_orders.dart';
+import 'package:tawseel/ui/driver/pages/driver_home_page.dart';
+import 'package:tawseel/ui/driver/pages/profile_page.dart';
+import 'package:tawseel/ui/driver/pages/wallet.dart';
 
 /// only wraps content in an appbar and background with colors
-class TawseelScaffold extends StatefulWidget {
+class DriverScaffold extends StatefulWidget {
   final Widget? body;
   final Widget? leading;
   final Widget? title;
@@ -16,7 +16,7 @@ class TawseelScaffold extends StatefulWidget {
   final double? leadingWidth;
   final List<Widget>? actions;
   final Color? backgroundColor;
-  const TawseelScaffold(
+  const DriverScaffold(
       {super.key,
       this.body,
       this.leading,
@@ -28,10 +28,10 @@ class TawseelScaffold extends StatefulWidget {
       this.leadingWidth});
 
   @override
-  State<TawseelScaffold> createState() => _TawseelScaffoldState();
+  State<DriverScaffold> createState() => _DriverScaffoldState();
 }
 
-class _TawseelScaffoldState extends State<TawseelScaffold> {
+class _DriverScaffoldState extends State<DriverScaffold> {
   final PageController _pageController = PageController(initialPage: 3);
 
   int _selectedIndex = 3;
@@ -71,10 +71,10 @@ class _TawseelScaffoldState extends State<TawseelScaffold> {
               });
             },
             children: const [
-              ProfilePage(),
-              NewOrderPage(),
-              CurrentOrdersPage(),
-              Homepage(),
+              DriverProfilePage(),
+              WalletPage(),
+              DriverOrders(),
+              DriverHomePage(),
             ],
           ),
       bottomNavigationBar: widget.body != null
@@ -98,7 +98,7 @@ class _TawseelScaffoldState extends State<TawseelScaffold> {
                   label: '',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.add_circle, size: 30),
+                  icon: Icon(Icons.wallet, size: 30),
                   label: '',
                 ),
                 BottomNavigationBarItem(

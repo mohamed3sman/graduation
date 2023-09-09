@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tawseel/core/constants.dart';
-import 'package:tawseel/ui/company/pages/home_page.dart';
 import 'package:tawseel/ui/company/pages/onboarding_page.dart';
 import 'package:tawseel/ui/company/widgets/default_container.dart';
 import 'package:tawseel/ui/company/widgets/default_scaffold.dart';
 import 'package:tawseel/ui/company/widgets/filled_button.dart';
 import 'package:tawseel/ui/company/widgets/textfield.dart';
+import 'package:tawseel/ui/driver/pages/driver_scaffold.dart';
 
 import 'reset_password_page.dart';
 
@@ -87,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                   Expanded(
                     child: TawseelFilledButton(
                       text: "دخول كسائق",
-                      onTap: () => Get.to(() => const TawseelScaffold()),
+                      onTap: () => Get.to(() => const DriverScaffold()),
                     ),
                   ),
                   const SizedBox(
@@ -96,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                   Expanded(
                     child: TawseelFilledButton(
                       text: "دخول كشركة",
-                      onTap: () => Get.to(() => const Homepage()),
+                      onTap: () => Get.to(() => const TawseelScaffold()),
                     ),
                   ),
                 ],

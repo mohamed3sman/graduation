@@ -153,6 +153,9 @@ class _DriverHomePageState extends State<DriverHomePage> {
                       ],
                     ),
                   ),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(kBorderRadius8),
@@ -168,13 +171,10 @@ class _DriverHomePageState extends State<DriverHomePage> {
                                     DateTime.now(),
                                     40)),
                           )),
-                      text: "عرض التفاصيل",
+                      text: "عرض التفاصيل ",
                       textColor: TColors.main,
                       color: TColors.card,
                     ),
-                  ),
-                  const SizedBox(
-                    height: kPadding8,
                   ),
                   const Divider(),
                   const SizedBox(

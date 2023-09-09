@@ -3,21 +3,22 @@ import 'package:get/get.dart';
 import 'package:tawseel/controllers/current_orders.dart';
 import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/core/enums.dart';
+import 'package:tawseel/ui/company/widgets/current_order_box.dart';
 import 'package:tawseel/ui/company/widgets/default_container.dart';
 import 'package:tawseel/ui/company/widgets/default_scaffold.dart';
 import 'package:tawseel/ui/company/widgets/filled_button.dart';
 import 'package:tawseel/ui/company/widgets/notification_icon.dart';
 import 'package:tawseel/ui/company/widgets/order_box.dart';
 
-class Order11 extends StatelessWidget {
-  const Order11({super.key});
+class DriverOrders extends StatelessWidget {
+  const DriverOrders({super.key});
 
   @override
   Widget build(BuildContext context) {
     return TawseelScaffold(
       toolbarHeight: Get.height / 10,
       leading: TawseelContainer(
-          isCircle: true, child: Image.asset('assets/images/person.png')),
+          isCircle: true, child: Image.asset('assets/images/pfp.png')),
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -75,7 +76,7 @@ class Order11 extends StatelessWidget {
                     const SizedBox(width: kPadding16),
                     TawseelFilledButton(
                       width: Get.width / 3,
-                      text: 'طلبات جديدة',
+                      text: 'قيد التوصيل',
                       color: isSecondSelected ? TColors.main : TColors.handle,
                       textColor: isSecondSelected ? null : TColors.blackText,
                       onTap: () => CurrentOrders.inst.currentFilteredOrders
@@ -84,7 +85,7 @@ class Order11 extends StatelessWidget {
                     const SizedBox(width: kPadding16),
                     TawseelFilledButton(
                       width: Get.width / 3,
-                      text: 'الطلبات الحالية',
+                      text: 'الطلبات المكتملة',
                       color: isThirdSelected ? TColors.main : TColors.handle,
                       textColor: isThirdSelected ? null : TColors.blackText,
                       onTap: () => CurrentOrders.inst.currentFilteredOrders
@@ -117,6 +118,7 @@ class Order11 extends StatelessWidget {
                           TText.displayLarge.copyWith(color: TColors.blackText),
                     ),
                   ),
+                  const CurrentOrderBox(),
                   ...CurrentOrders.inst.currentAllOrders
                       .asMap()
                       .entries
