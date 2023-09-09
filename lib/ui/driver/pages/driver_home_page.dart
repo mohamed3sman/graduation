@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quickalert/quickalert.dart';
+import 'package:tawseel/class/order.dart';
 import 'package:tawseel/core/constants.dart';
+import 'package:tawseel/core/enums.dart';
+import 'package:tawseel/ui/company/pages/order_details.dart';
 import 'package:tawseel/ui/company/widgets/default_container.dart';
 import 'package:tawseel/ui/company/widgets/default_scaffold.dart';
 import 'package:tawseel/ui/company/widgets/filled_button.dart';
 import 'package:tawseel/ui/company/widgets/notification_icon.dart';
-
+import 'package:tawseel/ui/company/widgets/order_box.dart';
 import 'reason.dart';
 
 class DriverHomePage extends StatefulWidget {
@@ -154,7 +158,16 @@ class _DriverHomePageState extends State<DriverHomePage> {
                       borderRadius: BorderRadius.circular(kBorderRadius8),
                       border: Border.all(color: TColors.main),
                     ),
-                    child: const TawseelFilledButton(
+                    child: TawseelFilledButton(
+                      onTap: () => Get.to(() => OrderDetails(
+                            orderBox: TawseelOrderBox(
+                                order: Order(
+                                    OrderState.onTheWay,
+                                    25613,
+                                    'شارع 44-السبتية-القاهرة',
+                                    DateTime.now(),
+                                    40)),
+                          )),
                       text: "عرض التفاصيل",
                       textColor: TColors.main,
                       color: TColors.card,
@@ -167,7 +180,7 @@ class _DriverHomePageState extends State<DriverHomePage> {
                   const SizedBox(
                     height: kPadding8,
                   ),
-                  Row(
+                  const Row(
                     children: [
                       Icon(
                         Icons.location_on,
@@ -188,28 +201,6 @@ class _DriverHomePageState extends State<DriverHomePage> {
                   const SizedBox(
                     height: kPadding16,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      TawseelFilledButton(
-                        textColor: TColors.card,
-                        text: "انهاء الطلب",
-                        width: Get.width / 3,
-                      ),
-                      TawseelFilledButton(
-                        onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return const Reason();
-                          }));
-                        },
-                        color: TColors.handle,
-                        textColor: TColors.blackText,
-                        text: "الغاء الطلب",
-                        width: Get.width / 3,
-                      ),
-                    ],
-                  )
                 ],
               ),
             )),
@@ -241,6 +232,43 @@ class _DriverHomePageState extends State<DriverHomePage> {
                 style: TText.titleSmall.copyWith(color: TColors.blackText),
               ),
               trailing: Image.asset("assets/images/walletmoney.png"),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                TawseelFilledButton(
+                  textColor: TColors.card,
+                  text: "انهاء الطلب",
+                  width: Get.width / 3,
+                  onTap: () {
+                    QuickAlert.show(
+                      context: context,
+                      confirmBtnColor: Colors.green,
+                      title: 'تم إرسال الطلب',
+                      confirmBtnText: 'حسنا',
+                      type: QuickAlertType.success,
+                    );
+                  },
+                ),
+                TawseelFilledButton(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const Reason();
+                    }));
+                  },
+                  color: TColors.handle,
+                  textColor: TColors.blackText,
+                  text: "الغاء الطلب",
+                  width: Get.width / 3,
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 10,
             ),
           ],
         ),

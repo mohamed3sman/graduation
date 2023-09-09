@@ -18,22 +18,18 @@ List<String> reasons = [
   "سبب اخر",
 ];
 
-
 class _ReasonState extends State<Reason> {
   String currentOption = reasons[0];
 
   @override
   Widget build(BuildContext context) {
-
-
-
     return TawseelScaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Text(
                   "سبب الإلغاء",
                   style: TextStyle(
@@ -50,6 +46,7 @@ class _ReasonState extends State<Reason> {
               child: ListTile(
                 title: const Text("العميل رفض الطلب"),
                 leading: Radio(
+                  activeColor: primaryColor,
                   value: reasons[0],
                   groupValue: currentOption,
                   onChanged: (value) {
@@ -67,6 +64,7 @@ class _ReasonState extends State<Reason> {
               child: ListTile(
                 title: const Text("الطلب تالف"),
                 leading: Radio(
+                  activeColor: primaryColor,
                   value: reasons[1],
                   groupValue: currentOption,
                   onChanged: (value) {
@@ -84,6 +82,7 @@ class _ReasonState extends State<Reason> {
               child: ListTile(
                 title: const Text("سبب اخر"),
                 leading: Radio(
+                  activeColor: primaryColor,
                   value: reasons[2],
                   groupValue: currentOption,
                   onChanged: (value) {
@@ -106,9 +105,21 @@ class _ReasonState extends State<Reason> {
             const SizedBox(
               height: 20,
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: TawseelFilledButton(
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    backgroundColor: primaryColor,
+                    content: Text(
+                      "تم إرسال السبب",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ));
+                },
                 text: "ارسال",
               ),
             )

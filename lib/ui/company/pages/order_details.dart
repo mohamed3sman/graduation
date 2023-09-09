@@ -212,7 +212,7 @@ class OrderDetails extends StatelessWidget {
                   foregroundColor: MaterialStateProperty.all(Colors.blue),
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(kBorderRadius6)))),
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(Icons.dialer_sip),
