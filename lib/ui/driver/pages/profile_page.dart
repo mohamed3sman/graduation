@@ -53,7 +53,7 @@ class DriverProfilePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "مطعم كريسبي & كرانشي",
+                          "محمد شادي",
                           style: TText.headlineSmall,
                         ),
                       ],
@@ -66,7 +66,7 @@ class DriverProfilePage extends StatelessWidget {
                       style: TText.displayLarge,
                       textAlign: TextAlign.start,
                     ),
-                    TawseelTextField(hintText: 'مطعم كريسبي & كرانشي'),
+                    TawseelTextField(hintText: "محمد شادي"),
                     SizedBox(
                       height: kPadding12,
                     ),
@@ -84,7 +84,7 @@ class DriverProfilePage extends StatelessWidget {
                       style: TText.displayLarge,
                       textAlign: TextAlign.start,
                     ),
-                    TawseelTextField(hintText: 'support@crispy-cranchy.com'),
+                    TawseelTextField(hintText: 'mohamedshady@gmail.com'),
                     SizedBox(
                       height: kPadding12,
                     ),
