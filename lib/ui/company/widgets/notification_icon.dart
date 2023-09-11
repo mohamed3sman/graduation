@@ -9,16 +9,16 @@ class TawseelNotificationIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TawseelContainer(
-      child: Stack(
-        children: [
-          const Icon(Icons.notifications),
-          Material(
-            child: InkWell(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const NotificationsPage();
-                }));
-              },
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return const NotificationsPage();
+          }));
+        },
+        child: Stack(
+          children: [
+            const Icon(Icons.notifications),
+            Material(
               child: Container(
                 width: 10.0,
                 height: 10.0,
@@ -29,8 +29,8 @@ class TawseelNotificationIcon extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

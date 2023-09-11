@@ -2,8 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quickalert/quickalert.dart';
 import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/ui/company/pages/Change_password.dart';
+import 'package:tawseel/ui/company/pages/login_page.dart';
 import 'package:tawseel/ui/company/widgets/default_container.dart';
 import 'package:tawseel/ui/company/widgets/default_scaffold.dart';
 import 'package:tawseel/ui/company/widgets/filled_button.dart';
@@ -97,6 +99,15 @@ class ProfilePage extends StatelessWidget {
                     TawseelFilledButton(
                       color: TColors.success,
                       text: 'حفظ التغييرات',
+                      onTap: () {
+                        QuickAlert.show(
+                          context: context,
+                          confirmBtnColor: Colors.green,
+                          title: 'تم حفظ التغييرات',
+                          confirmBtnText: 'حسنا',
+                          type: QuickAlertType.success,
+                        );
+                      },
                     ),
                     SizedBox(
                       height: kPadding24,
@@ -119,19 +130,27 @@ class ProfilePage extends StatelessWidget {
           child: TawseelContainer(
             margin: EdgeInsets.symmetric(horizontal: kPadding20),
             padding: EdgeInsets.all(kPadding8),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(
-                  Icons.logout_rounded,
-                  color: Colors.red,
-                ),
-                SizedBox(width: kPadding12),
-                Text(
-                  "تسجيل الخروج",
-                  style: TText.displayLarge.copyWith(color: TColors.error),
-                ),
-              ],
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) {
+                  return LoginPage();
+                }));
+              },
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.logout_rounded,
+                    color: Colors.red,
+                  ),
+                  SizedBox(width: kPadding12),
+                  Text(
+                    "تسجيل الخروج",
+                    style: TText.displayLarge.copyWith(color: TColors.error),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

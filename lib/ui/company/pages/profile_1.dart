@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quickalert/quickalert.dart';
 import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/ui/company/pages/Change_password.dart';
 import 'package:tawseel/ui/company/widgets/default_container.dart';
@@ -100,6 +101,15 @@ class Profile1 extends StatelessWidget {
                     TawseelFilledButton(
                       color: TColors.success,
                       text: 'حفظ التغييرات',
+                      onTap: () {
+                        QuickAlert.show(
+                          context: context,
+                          confirmBtnColor: Colors.green,
+                          title: 'تم حفظ التغييرات',
+                          confirmBtnText: 'حسنا',
+                          type: QuickAlertType.success,
+                        );
+                      },
                     ),
                     SizedBox(
                       height: kPadding24,

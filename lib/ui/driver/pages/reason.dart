@@ -112,7 +112,7 @@ class _ReasonState extends State<Reason> {
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                     backgroundColor: primaryColor,
                     content: Text(
-                      "تم إرسال السبب",
+                      "تم إلغاء الطلب",
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w700,

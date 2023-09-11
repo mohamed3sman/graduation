@@ -129,7 +129,7 @@ class CurrentOrderBox extends StatelessWidget {
                   QuickAlert.show(
                     context: context,
                     confirmBtnColor: Colors.green,
-                    title: 'تم إرسال الطلب',
+                    title: 'تم إنهاء الطلب',
                     confirmBtnText: 'حسنا',
                     type: QuickAlertType.success,
                   );

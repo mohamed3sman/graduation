@@ -9,6 +9,7 @@ import 'package:tawseel/ui/company/widgets/textfield.dart';
 import 'package:tawseel/ui/driver/pages/driver_scaffold.dart';
 
 import 'reset_password_page.dart';
+import 'signup_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -127,13 +128,15 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     TextButton(
-                      onPressed: () => Navigator.pop(context),
+                      onPressed: () => Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const SignupPage();
+                      })),
                       child: Container(
                         decoration: const BoxDecoration(
                           border: Border(
                             bottom: BorderSide(
-                              color:
-                                  Colors.white, // Change the color of the line
+                              color: Colors.white,
                               width: 1.0, // Adjust the width of the line
                             ),
                           ),

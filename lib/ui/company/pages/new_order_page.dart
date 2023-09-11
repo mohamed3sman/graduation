@@ -159,6 +159,7 @@ class NewOrderPage extends StatelessWidget {
                   if (CurrentOrders.inst.showNewOrderContainer.value) ...[
                     TawseelTextField(
                       hintText: 'اسم المنتج',
+                      obsecureText: false,
                       controller:
                           CurrentOrders.inst.newOrderNameController.value,
                     ),

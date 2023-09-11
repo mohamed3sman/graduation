@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quickalert/quickalert.dart';
 import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/ui/company/widgets/default_back_button.dart';
 import 'package:tawseel/ui/company/widgets/default_scaffold.dart';
@@ -222,7 +223,14 @@ class OrderDetails extends StatelessWidget {
                   Text("اتصال بالعميل"),
                 ],
               ),
-              onPressed: () {},
+              onPressed: () {
+                QuickAlert.show(
+                  context: context,
+                  confirmBtnColor: Colors.green,
+                  title: 'جاري الإتصال',
+                  type: QuickAlertType.loading,
+                );
+              },
             ),
           )
         ],

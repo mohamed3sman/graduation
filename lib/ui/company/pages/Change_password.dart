@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quickalert/quickalert.dart';
 import 'package:tawseel/core/constants.dart';
 import 'package:tawseel/ui/company/widgets/default_back_button.dart';
 import 'package:tawseel/ui/company/widgets/default_container.dart';
@@ -68,9 +69,18 @@ class _ChangePasswordState extends State<ChangePassword> {
                 obsecureText: true,
               ),
               const SizedBox(height: kPadding20),
-              const TawseelFilledButton(
+              TawseelFilledButton(
                 text: "حفظ التغييرات",
                 color: TColors.success,
+                onTap: () {
+                  QuickAlert.show(
+                    context: context,
+                    confirmBtnColor: Colors.green,
+                    title: 'تم حفظ التغييرات',
+                    confirmBtnText: 'حسنا',
+                    type: QuickAlertType.success,
+                  );
+                },
               )
             ],
           ),

@@ -247,7 +247,7 @@ class _DriverHomePageState extends State<DriverHomePage> {
                     QuickAlert.show(
                       context: context,
                       confirmBtnColor: Colors.green,
-                      title: 'تم إرسال الطلب',
+                      title: 'تم إنهاء الطلب',
                       confirmBtnText: 'حسنا',
                       type: QuickAlertType.success,
                     );
