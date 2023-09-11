@@ -63,6 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                 const TawseelTextField(
                   hintText: 'رقم الهاتف',
                   inputType: TextInputType.phone,
+                  obsecureText: false,
                 ),
                 const SizedBox(
                   height: kPadding20,

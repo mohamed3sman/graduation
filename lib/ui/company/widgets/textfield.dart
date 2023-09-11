@@ -45,6 +45,7 @@ class _TawseelTextFieldState extends State<TawseelTextField> {
           color: Colors.white,
           borderRadius: BorderRadius.circular(kBorderRadius6)),
       child: TextFormField(
+        textDirection: TextDirection.rtl,
         obscureText: passwordVisible,
         keyboardType: widget.inputType,
         onChanged: widget.onChanged,

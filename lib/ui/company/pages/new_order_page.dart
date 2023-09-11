@@ -165,6 +165,7 @@ class NewOrderPage extends StatelessWidget {
                     ),
                     TawseelTextField(
                       hintText: 'سعر المنتج',
+                      obsecureText: false,
                       suffixText: 'ج.م',
                       controller:
                           CurrentOrders.inst.newOrderPriceController.value,
